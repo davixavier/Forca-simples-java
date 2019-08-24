@@ -11,6 +11,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
+//Controla e entrada feita pelo usuário
 public class Controls extends VBox
 {
 	private Label playerLabel;
@@ -21,6 +22,7 @@ public class Controls extends VBox
 	
 	public Controls(Pane root, WordViewPane wordViewPane, ForcaPane forcaPane)
 	{
+		//Inicialização de gráficos mostrados em caso de perda ou ganho e texto da letra atual digitada pelo jogador
 		playerLabel = new Label();
 		statusLabel = new Label("Você errou demais e morreu na forca!");
 		statusLabel.setVisible(false);
@@ -43,6 +45,12 @@ public class Controls extends VBox
 		
 		setSpacing(20);
 		
+		//Gerenciamento de entrada do jogador
+		//Mostra uma letra digitada pelo usuário no componente gráfico destinado a isso
+		//Checa para quando a tecla enter for apertada, se sim checa se a letra existe no painel de letras,
+		//se sim deixa a letra visível, se não adiciona uma parte do corpo a mais do enforcado
+		
+		//A cada aperto da tecla ENTER checa se o usuário ganhou ou perdeu
 		root.getScene().setOnKeyPressed(e ->
 		{
 			if (e.getCode() == KeyCode.BACK_SPACE)

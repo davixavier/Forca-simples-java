@@ -9,12 +9,13 @@ import javafx.scene.layout.Pane;
 
 public class Main extends Application 
 {
-	
+	//Método de inicialização de janela do JavaFX
 	@Override
 	public void start(Stage primaryStage) 
 	{
 		try 
 		{
+			//Inicialização da janela principal do programa
 			Pane root = new Pane();
 			Scene scene = new Scene(root, 400, 400);
 			
@@ -24,6 +25,7 @@ public class Main extends Application
 			
 			primaryStage.show();
 			
+			//Inicialização dos componentes principais do jogo
 			MainGame loop = new MainGame(root);
 		} 
 		catch(Exception e)

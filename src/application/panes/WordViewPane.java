@@ -11,11 +11,13 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 
+//Mostra as letras e as linhas embaixo delas quando as mesmas ainda não forem acertadas
 public class WordViewPane extends HBox
 {
 	private ObservableList<String> letters;
 	private ArrayList<VBox> vBoxes;
 	
+	//Inicialização da lista de letras
 	public WordViewPane()
 	{
 		letters = FXCollections.observableArrayList();
@@ -40,7 +42,13 @@ public class WordViewPane extends HBox
 			letters.add(Character.toString(letras.charAt(i)).toLowerCase());
 		}
 	}
+	////
 	
+	//Inicializa a lista de paineis para os componentes gráficos de cada letra
+	
+	//Usa a propriedade observável da ObservableList para adicionar os componentes gráficos das letras para a 
+	//lista de componentes gráficos sempre que a lista de letras seja mudada
+	//Os gráficos das letras são inicializados como invísiveis
 	private void init()
 	{
 		vBoxes = new ArrayList<VBox>();
@@ -75,6 +83,7 @@ public class WordViewPane extends HBox
 		setAlignment(Pos.CENTER);
 	}
 	
+	//Testa se uma letra está presente na lista de letras, se sim, deixa os gráficos dessa letra vísivel
 	public boolean testLetter(String letter)
 	{
 		boolean ret = false;
@@ -91,6 +100,8 @@ public class WordViewPane extends HBox
 		return ret;
 	}
 	
+	//Conta a quantidade de letras restantes para o jogador acertar
+	//Ou seja, se retornar 0 o jogador ganhou
 	public int getRemainingLetters()
 	{
 		int ret = 0;

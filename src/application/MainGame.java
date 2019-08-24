@@ -16,6 +16,7 @@ public class MainGame
 {
 	private WordViewPane wordViewPane;
 	
+	//Inicializando os componentes principais do jogo
 	public MainGame(Pane root)
 	{
 		root.setUserData(this);
@@ -23,6 +24,8 @@ public class MainGame
 		init(root);
 	}
 	
+	//Inicialização do painel que mostra a forca, do painel das letras e do selecionador de palavras aleatórias
+	//Método pode ser chamado para reinicialização do jogo
 	public void init(Pane root)
 	{
 		root.getChildren().clear();

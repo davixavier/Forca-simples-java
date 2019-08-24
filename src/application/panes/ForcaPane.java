@@ -7,6 +7,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 
+//Mostra a forca e as partes do corpo da forca
 public class ForcaPane extends Pane
 {
 	private int index;
@@ -17,6 +18,7 @@ public class ForcaPane extends Pane
 	private ImageView braço;
 	private ImageView perna;
 	
+	//Inicializa as imagens e deixa as partes do corpo invisíveis
 	public ForcaPane()
 	{
 		forca = new ImageView(new Image(File.separatorChar + "application" + File.separatorChar + "img" + File.separatorChar + "forca.png"));
@@ -46,6 +48,7 @@ public class ForcaPane extends Pane
 		index = 1;
 	}
 	
+	//Deixa a próxima parte do corpo do enforcado visível
 	public void next()
 	{
 		if (index >= getChildren().size())
@@ -55,6 +58,8 @@ public class ForcaPane extends Pane
 		index++;
 	}
 	
+	//Retorna a quantidade de partes do corpo do enforcado que ainda restam ser mostradas
+	//Ou seja, se retornar 0, quer dizer que o jogador perdeu
 	public int remainingParts()
 	{
 		int ret = 0;
