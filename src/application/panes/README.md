@@ -1,4 +1,4 @@
-#Classes de componentes gráficos específicos para esse jogo
+# Classes de componentes gráficos específicos para esse jogo
 
 -> WordViewPane: Responsável por mostrar as letras acertadas ou não acertadas de certa palavra
 
